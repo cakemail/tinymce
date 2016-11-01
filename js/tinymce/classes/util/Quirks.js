@@ -1181,6 +1181,9 @@ define("tinymce/util/Quirks", [
 		/**
 		 * Sets various Gecko editing options on mouse down and before a execCommand to disable inline table editing that is broken etc.
 		 */
+		/**
+		 * @TODO: CAKEMAIL
+
 		function setGeckoEditingOptions() {
 			function setOpts() {
 				refreshContentEditable();
@@ -1196,7 +1199,7 @@ define("tinymce/util/Quirks", [
 			if (!settings.readonly) {
 				editor.on('BeforeExecCommand MouseDown', setOpts);
 			}
-		}
+		}*/
 
 		/**
 		 * Fixes a gecko link bug, when a link is placed at the end of block elements there is
@@ -1778,7 +1781,8 @@ define("tinymce/util/Quirks", [
 			removeHrOnBackspace();
 			focusBody();
 			removeStylesWhenDeletingAcrossBlockElements();
-			setGeckoEditingOptions();
+			// @TODO: CAKEMAIL - Commenting this fixes moving buttons bug in editor for FF.
+			//setGeckoEditingOptions();
 			addBrAfterLastLinks();
 			showBrokenImageIcon();
 			blockCmdArrowNavigation();
