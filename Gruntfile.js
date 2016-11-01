@@ -871,8 +871,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('@ephox/bolt');
 
 	grunt.registerTask("lint", ["eslint"]);
-	grunt.registerTask("minify", ["amdlc", "bolt-build", "uglify", "copy", "skin", "less"]);
+	grunt.registerTask("minify", ["npm-install", "amdlc", "bolt-build", "uglify", "copy", "skin", "less"]);
 	grunt.registerTask("test", ["qunit"]);
 	grunt.registerTask("sc-test", ["connect", "clean:saucelabs", "saucelabs-qunit"]);
-	grunt.registerTask("default", ["lint", "bolt-init", "minify", "test", "clean:release", "moxiezip", "nugetpack", "version"]);
+	grunt.registerTask("default", ["npm-install", "lint", "bolt-init", "minify", "test", "clean:release", "moxiezip", "nugetpack", "version"]);
 };
